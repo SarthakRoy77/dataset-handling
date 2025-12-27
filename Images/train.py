@@ -5,11 +5,7 @@ import torch.nn as nn  # All neural network modules, nn.Linear, nn.Conv2d, Batch
 import torch.optim as optim  # For all Optimization algorithms, SGD, Adam, etc.
 import torchvision.transforms as transforms  # Transformations we can perform on our dataset
 import torchvision
-import os
-import pandas as pd
-from PIL import Image
 from torch.utils.data import (
-    Dataset,
     DataLoader,
 )  # Gives easier dataset managment and creates mini batches
 from Images.customdataset import CatsAndDogsDataset
