@@ -1,0 +1,15 @@
+GoogLeNet (Inception V1) is a deep convolutional neural 
+network architecture designed for efficient image 
+classification. It introduces the Inception module, 
+which performs multiple convolution operations (1x1, 3x3, 5x5)
+in parallel, along with max pooling and concatenates their
+outputs. The architecture is deep, yet optimized for speed and
+performance, which makes it suitable for large-scale visual
+recognition tasks. It brought forward innovative architectural 
+choices such as 1×1 convolutions, global average pooling and
+the Inception module, all aimed at improving depth and
+computational efficiency.
+
+
+!!1x1 Convolutionals reduced no.operations without
+compromising performance

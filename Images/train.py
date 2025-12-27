@@ -9,7 +9,7 @@ from torch.utils.data import (
     DataLoader,
     random_split
 )  # Gives easier dataset managment and creates mini batches
-from Images.customdataset import CatsAndDogsDataset
+from customdataset import CatsAndDogsDataset
 
 # Set device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -23,8 +23,8 @@ num_epochs = 1
 
 # Load Data
 dataset = CatsAndDogsDataset(
-    csv_file="cats_dogs.csv",
-    root_dir="cats_dogs_resized",
+    csv_file="Images/cats_dogs.csv",
+    root_dir="Images/cats_dogs_resized",
     transform=transforms.ToTensor(),
 )
 
@@ -34,8 +34,7 @@ train_loader = DataLoader(dataset=train_set, batch_size=batch_size, shuffle=True
 test_loader = DataLoader(dataset=test_set, batch_size=batch_size, shuffle=True)
 
 # Model
-model = torchvision.models.googlenet(weights="DEFAULT")
-
+model = torchvision.models.googlenet(weight="DEFAULT")
 # freeze all layers, change final linear layer with num_classes
 for param in model.parameters():
     param.requires_grad = False
