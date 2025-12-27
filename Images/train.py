@@ -7,6 +7,7 @@ import torchvision.transforms as transforms  # Transformations we can perform on
 import torchvision
 from torch.utils.data import (
     DataLoader,
+    random_split
 )  # Gives easier dataset managment and creates mini batches
 from Images.customdataset import CatsAndDogsDataset
 
@@ -18,7 +19,7 @@ in_channel = 3
 num_classes = 2
 learning_rate = 3e-4
 batch_size = 32
-num_epochs = 10
+num_epochs = 1
 
 # Load Data
 dataset = CatsAndDogsDataset(
@@ -27,10 +28,8 @@ dataset = CatsAndDogsDataset(
     transform=transforms.ToTensor(),
 )
 
-# Dataset is actually a lot larger ~25k images, just took out 10 pictures
-# to upload to Github. It's enough to understand the structure and scale
-# if you got more images.
-train_set, test_set = torch.utils.data.random_split(dataset, [5, 5])
+# Dataset is actually a lot larger ~25k images. It's enough to understand the structure and scale
+train_set, test_set = random_split(dataset, [7, 3])
 train_loader = DataLoader(dataset=train_set, batch_size=batch_size, shuffle=True)
 test_loader = DataLoader(dataset=test_set, batch_size=batch_size, shuffle=True)
 
